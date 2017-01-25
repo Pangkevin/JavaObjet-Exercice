@@ -1,7 +1,10 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TestTp1 {
+
+public class Exo3_4 {
 	
+	 
 	
 	
 	public static void main(String[] args) {
@@ -11,8 +14,8 @@ public class TestTp1 {
 		String phrase = sc.nextLine();
 		
 		
-		Exo25(phrase);
-		triCompareChaineChara(phrase);
+		Exo25(phrase); // avec la fonction split()
+		triCompareChaineChara(phrase);//sans split()
 		
 		
 	}
@@ -42,6 +45,8 @@ public class TestTp1 {
 		String motApresSplit;
 		int indiDebutChaineCara = 0;
 		
+		ArrayList<String> mots = new ArrayList<String>();
+		
 		for(int i =0; i <= indice-1; i++){
 			
 			lettrePhrase =phrase.charAt(i);
@@ -51,22 +56,41 @@ public class TestTp1 {
 			
 			if(!(lettrePhrase >= 'a' && lettrePhrase <= 'z') || (lettrePhrase >= 'A' && lettrePhrase <= 'Z')){
 			
+			
 				motApresSplit = phrase.substring(indiDebutChaineCara, i);
 				
-				System.out.println(motApresSplit);
+				mots.add(motApresSplit);
+				
 				indiDebutChaineCara = i +1	;
+			
+				//al.add(i);
 				
 				
 		}else if(i == indice-1){
 			
 			motApresSplit = phrase.substring(indiDebutChaineCara, i+1);
 			
-			System.out.println(motApresSplit);
+			//System.out.println(motApresSplit);
+			mots.add(motApresSplit);
 			indiDebutChaineCara = i +1	;
 			
 			
 		}
 		
 	}
+		
+		int tailleList = mots.size();
+		
+		for (int i = 0; i <= tailleList-1; i++){
+			
+			if(mots.get(i).length() != 0){
+			
+				System.out.println(mots.get(i));
+		}
+		
+		
+		
+		
 	}
+}
 }
