@@ -1,0 +1,7 @@
+
+public abstract class testAbstract {
+
+	
+	private static abstract  lol(int lolol);
+	
+}
