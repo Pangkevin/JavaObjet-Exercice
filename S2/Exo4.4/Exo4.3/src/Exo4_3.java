@@ -22,6 +22,12 @@ public class Exo4_3 {
 	}
 	
 	
+	
+	/**
+	 * 
+	 * @param nbreVoulu qui est 2 par défaut
+	 * @return
+	 */
 	public static int  nombreRandom(int nbreVoulu){
 		
 		
