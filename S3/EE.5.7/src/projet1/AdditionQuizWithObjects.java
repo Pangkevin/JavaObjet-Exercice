@@ -7,13 +7,20 @@ import projet2.IntQuestion;
 public class AdditionQuizWithObjects   {
 	
 	
+	/**
+
+     * Cette classe est une classe main de la génération de question  
+
+     */
+	
+	
 	private static IntQuestion[] questions;  // The questions for the quiz
 
     private static int[] userAnswers;   // The user's answers to the ten questions.
 
 	private static Scanner sc;
     
-    
+	
     public static void main(String[] args) {
         System.out.println();
         System.out.println("Welcome to the addition quiz!");
