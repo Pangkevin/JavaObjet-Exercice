@@ -1,0 +1,26 @@
+package setCalculator;
+
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nombre calculs a faire:");
+		int n = sc.nextInt();
+		sc.close();
+		for (int i=0; i<n;i++){
+			setCalculator();			
+		}
+
+	}
+	
+	public static void setCalculator(){
+		TreeSet<Integer> set1 = new TreeSet<Integer>();
+		TreeSet<Integer> set2 = new TreeSet<Integer>();
+		System.out.println("calcul:");
+		String str = sc.nextLine();
+	}
+
+}

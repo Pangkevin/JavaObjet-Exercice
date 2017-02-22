@@ -1,0 +1,50 @@
+package setCalculator;
+
+import java.util.Scanner;
+import java.util.TreeSet;
+
+import javax.swing.text.html.HTMLDocument.Iterator;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Nombre calculs a faire:");
+		int n = sc.nextInt();
+		for (int i=0; i<n;i++){
+			setCalculator();			
+		}
+
+	}
+	
+	public static void setCalculator(){
+		TreeSet<Integer> set1 = new TreeSet<Integer>();
+		TreeSet<Integer> set2 = new TreeSet<Integer>();
+		System.out.println("calcul:");
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		
+		
+		String[] tablestr = input.split("[\\+\\-\\*]");//regular expression to split using the *, - or +
+		if (tablestr.length!=2){
+			System.out.println("Format incorect");
+			return;
+		}
+		tablestr[0] = tablestr[0].replaceAll("[\\[\\]]", "");
+		tablestr[1] = tablestr[1].replaceAll("[\\[\\]]", "");
+		for(String str : tablestr[0].split(",")){
+			set1.add(Integer.parseInt(str));
+		}
+		for(String str : tablestr[1].split(",")){
+			if (!str.equals("")) set1.add(Integer.parseInt(str));
+		}
+		
+		java.util.Iterator<Integer> it = set1.iterator();
+		
+	    while(it.hasNext())
+	      System.out.println(it.next()); 
+		
+		
+	}
+
+}

@@ -1,4 +1,4 @@
-//Packages � importer afin d'utiliser l'objet File
+
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -12,22 +12,22 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
-
+/**
+ * 
+ * @author pangke16
+ * Read the file 'dictionnaire.txt' and print out the words sorted by alphabetical order
+ */
 public class EE77 {
 	
 	
 	  public static void main(String[] args) {
-	    //Nous d�clarons nos objets en dehors du bloc try/catch
-	
 	    try {
 	    	
-	    	InputStream  ips=new FileInputStream("dictionnaire.txt"); //pour les classes g�rant les flux d'entr�e 
-	    	InputStreamReader ipsr=new InputStreamReader(ips); // permet de lire les octets du fichier
+	    	InputStream  ips=new FileInputStream("dictionnaire.txt"); //file where words are stored
+	    	InputStreamReader ipsr=new InputStreamReader(ips);
 	    	
-	    	BufferedReader buf=new BufferedReader(ipsr); // permet de lire le fichier plus vite gr�ce �
-	    	//la m�moire tampon en gros au lieu de lire byte par byte on peut lire 800 byte je crois
-	    	
-	    	ArrayList<String> listmot = new ArrayList();
+	    	BufferedReader buf=new BufferedReader(ipsr);
+	    	ArrayList<String> listmot = new ArrayList<String>();
 	      
 	      PutWordHashSet(buf, listmot);
 	
@@ -46,7 +46,7 @@ public class EE77 {
 			 
 			 try {
 
-				 String ligne; // stocker les mots 
+				 String ligne;
 				
 				 
 					while ((ligne=buf.readLine())!=null){
@@ -54,14 +54,14 @@ public class EE77 {
 						
 						for( String str : ligne.split(" ") ){
 							if (!listmot.contains(str)){
-								listmot.add(str.toLowerCase());// j'ajoute les mots du fichier et je les mets en minuscule 
+								listmot.add(str.toLowerCase());
 							}
 						}
 						
 						
 					}
 					
-					listmot.sort(String::compareToIgnoreCase); // je trie les mots dans la liste dans l'ordre alphab�tique 
+					listmot.sort(String::compareToIgnoreCase);
 					
 					for(int i=0; i < listmot.size(); i++ ){
 						
